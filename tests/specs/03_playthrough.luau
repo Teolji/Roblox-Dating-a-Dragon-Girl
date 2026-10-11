@@ -22,7 +22,14 @@ return function(T, root, gameRequire)
 			if s then
 				table.insert(
 					lines,
-					string.format("ch%d: trust %d, affinity %d, romance %d, resolve %d", chapter, s.trust, s.affinity, s.romance, s.resolve)
+					string.format(
+						"ch%d: trust %d, affinity %d, romance %d, resolve %d",
+						chapter,
+						s.trust,
+						s.affinity,
+						s.romance,
+						s.resolve
+					)
 				)
 			end
 		end
@@ -33,7 +40,9 @@ return function(T, root, gameRequire)
 		strategy.roundtrip = true
 		local sim = Sim.new(root, gameRequire, strategy, overrides)
 		local ending = sim:run()
-		print(`        [{strategy.name}] ending={ending} milestones={table.concat(sim.milestones, ">")} gifts={sim.giftsGiven} steps={sim.steps}`)
+		print(
+			`        [{strategy.name}] ending={ending} milestones={table.concat(sim.milestones, ">")} gifts={sim.giftsGiven} steps={sim.steps}`
+		)
 		print(`        [{strategy.name}] {show(sim)}`)
 		return sim, ending
 	end

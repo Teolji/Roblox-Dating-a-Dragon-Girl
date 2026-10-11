@@ -21,6 +21,7 @@ SaveSchema.DefaultSettings = {
 	showNumbers = false, -- show exact relationship deltas in toasts
 	reduceMotion = false, -- no camera moves, no shake, instant text
 	cinematicCamera = true,
+	showWaypoint = true, -- floating marker toward the current objective
 	uiScale = 1,
 }
 
@@ -98,7 +99,7 @@ function SaveSchema.validateSettings(input: any, base: any?)
 	s.music = num(input.music, s.music, 0, 1, false)
 	s.sfx = num(input.sfx, s.sfx, 0, 1, false)
 	s.uiScale = num(input.uiScale, s.uiScale, 0.8, 1.3, false)
-	for _, key in ipairs({ "showNumbers", "reduceMotion", "cinematicCamera" }) do
+	for _, key in ipairs({ "showNumbers", "reduceMotion", "cinematicCamera", "showWaypoint" }) do
 		if type(input[key]) == "boolean" then
 			s[key] = input[key]
 		end

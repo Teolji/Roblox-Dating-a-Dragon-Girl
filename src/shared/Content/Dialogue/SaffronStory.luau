@@ -53,19 +53,31 @@ return {
 					},
 				},
 			},
-			b_kind = { emote = "surprised", text = "An apology. Unprompted. With an offer of labour.", next = "b_kind2" },
+			b_kind = {
+				emote = "surprised",
+				text = "An apology. Unprompted. With an offer of labour.",
+				next = "b_kind2",
+			},
 			b_kind2 = {
 				emote = "happy",
 				text = "'Item #4112: polite.' That's going in the margin. With a little star.",
 				next = "c1",
 			},
-			b_joke = { emote = "smug", text = "Item. Guest. Unexpected ceiling feature. I don't make the rules.", next = "b_joke2" },
+			b_joke = {
+				emote = "smug",
+				text = "Item. Guest. Unexpected ceiling feature. I don't make the rules.",
+				next = "b_joke2",
+			},
 			b_joke2 = {
 				emote = "thoughtful",
 				text = "...I do make the rules. I wrote all of them. But I wrote them very carefully.",
 				next = "c1",
 			},
-			b_horns = { emote = "flustered", text = "I am a tall woman with an extensive hat collection.", next = "b_horns2" },
+			b_horns = {
+				emote = "flustered",
+				text = "I am a tall woman with an extensive hat collection.",
+				next = "b_horns2",
+			},
 			b_horns2 = {
 				speaker = "narrator",
 				emote = "flustered",
@@ -117,7 +129,12 @@ return {
 				emote = "neutral",
 				text = "Here's the arrangement. Lost things stay in the Keeping House until someone claims them. Nobody has claimed you, so you'll work off the roof: help me catalogue the hoard, return a few strays to their owners, and we'll call it even.",
 				choices = {
-					{ text = "Deal. Where do I start?", tag = "kind", effects = { stat = { "trust", 1 } }, next = "d_deal" },
+					{
+						text = "Deal. Where do I start?",
+						tag = "kind",
+						effects = { stat = { "trust", 1 } },
+						next = "d_deal",
+					},
 					{ text = "Do I get paid?", tag = "joke", effects = { stat = { "affinity", 2 } }, next = "d_paid" },
 					{ text = "And if I refuse?", tag = "rude", next = "d_refuse" },
 				},
@@ -165,7 +182,11 @@ return {
 				text = "Because someone, somewhere, misses every one of these. If I keep them safe, then they're not lost-lost. Just... waiting.",
 				next = "b2",
 			},
-			b2 = { emote = "smug", text = "Also, dragons hoard. It's very much a whole thing. Now: sorting!", next = "a1" },
+			b2 = {
+				emote = "smug",
+				text = "Also, dragons hoard. It's very much a whole thing. Now: sorting!",
+				next = "a1",
+			},
 		},
 	},
 
@@ -246,7 +267,11 @@ return {
 				text = "...Who's there? No — wait, don't, I already — ha! Oh no. Oh no, that's the laugh. Forget you heard that.",
 				next = "z1",
 			},
-			p1 = { emote = "thoughtful", text = "It's guttering. Has been for weeks. Old magic gets tired.", next = "p2" },
+			p1 = {
+				emote = "thoughtful",
+				text = "It's guttering. Has been for weeks. Old magic gets tired.",
+				next = "p2",
+			},
 			p2 = {
 				emote = "annoyed",
 				text = "And before you ask: no, I don't want to talk about it. Ask me something else. Ask me about spoons.",
@@ -286,19 +311,43 @@ return {
 				emote = "sad",
 				text = "I can breathe fire. Technically. Historically. It's... been a while.",
 				choices = {
-					{ text = "You don't have to explain.", tag = "respect", effects = { stat = { "trust", 3 } }, next = "z1" },
-					{ text = "Does your tail get cold, though?", tag = "joke", effects = { stat = { "affinity", 2 } }, next = "w3" },
+					{
+						text = "You don't have to explain.",
+						tag = "respect",
+						effects = { stat = { "trust", 3 } },
+						next = "z1",
+					},
+					{
+						text = "Does your tail get cold, though?",
+						tag = "joke",
+						effects = { stat = { "affinity", 2 } },
+						next = "w3",
+					},
 				},
 			},
-			w3 = { emote = "smug", text = "Never. It is a magnificent furnace. Thank you for your concern.", next = "z1" },
+			w3 = {
+				emote = "smug",
+				text = "Never. It is a magnificent furnace. Thank you for your concern.",
+				next = "z1",
+			},
 			z1 = { emote = "determined", text = "Right. Ledger business.", next = "z2" },
 			z2 = {
 				emote = "smug",
 				text = "By the authority vested in me by myself: Item #4112 is hereby reclassified as... Assistant Keeper. Temporary. Probationary. Mostly decorative.",
 				choices = {
-					{ text = "I'm honoured, Miss Ignavarre.", tag = "kind", effects = { stat = { { "affinity", 2 }, { "trust", 1 } } }, next = "z3" },
+					{
+						text = "I'm honoured, Miss Ignavarre.",
+						tag = "kind",
+						effects = { stat = { { "affinity", 2 }, { "trust", 1 } } },
+						next = "z3",
+					},
 					{ text = "Mostly decorative?!", tag = "joke", effects = { stat = { "affinity", 3 } }, next = "z4" },
-					{ text = "Does that mean I can finally leave?", tag = "leave", effects = { flag = "asked_to_leave" }, next = "z5" },
+					{
+						text = "Does that mean I can finally leave?",
+						tag = "leave",
+						effects = { flag = "asked_to_leave" },
+						next = "z5",
+					},
 				},
 			},
 			z3 = {
@@ -306,7 +355,11 @@ return {
 				text = "As you should be. Assistant Keepers get a mug. It says WORLD'S OKAYEST. I found it.",
 				next = "z6",
 			},
-			z4 = { emote = "laugh", text = "Decorative is a compliment here! The umbrellas would kill for decorative.", next = "z6" },
+			z4 = {
+				emote = "laugh",
+				text = "Decorative is a compliment here! The umbrellas would kill for decorative.",
+				next = "z6",
+			},
 			z5 = {
 				emote = "sad",
 				text = "Oh. Well — yes. Technically. When your balloon is fixed. Wren could patch it, given time.",
@@ -391,7 +444,11 @@ return {
 			},
 			p3 = { emote = "sad", text = "The answer is no. Please don't ask me again.", next = "c1" },
 			j1 = { emote = "smug", text = "Very dramatic. Operatic, even. There'd be a cape.", next = "j2" },
-			j2 = { emote = "sad", text = "...It's a no, {player}. I'm sorry. Tell the Mayor I'm sorry, too.", next = "c1" },
+			j2 = {
+				emote = "sad",
+				text = "...It's a no, {player}. I'm sorry. Tell the Mayor I'm sorry, too.",
+				next = "c1",
+			},
 			c1 = {
 				emote = "neutral",
 				text = "If you want to help the festival, help the lanterns. Wren needs glowcaps — the mushrooms in Glowcap Woods, east of the village. Five should do.",
@@ -481,7 +538,11 @@ return {
 					},
 				},
 			},
-			j1 = { emote = "laugh", text = "Mysterious! Yes. I'm a creature of mystery and lukewarm beverages.", next = "b1" },
+			j1 = {
+				emote = "laugh",
+				text = "Mysterious! Yes. I'm a creature of mystery and lukewarm beverages.",
+				next = "b1",
+			},
 			p1 = {
 				emote = "annoyed",
 				text = "Oh, TRYING HARDER. Why didn't I think of that? I'll just try harder, like a sneeze.",
@@ -500,7 +561,10 @@ return {
 					{
 						text = "I failed my pilot's exam three times. The third time I flew into a bell tower. I know that wall.",
 						tag = "honest",
-						effects = { stat = { { "trust", 4 }, { "affinity", 2 }, { "resolve", 1 } }, flag = "shared_failure" },
+						effects = {
+							stat = { { "trust", 4 }, { "affinity", 2 }, { "resolve", 1 } },
+							flag = "shared_failure",
+						},
 						next = "s1",
 					},
 					{
@@ -547,8 +611,18 @@ return {
 				emote = "smug",
 				text = "You still owe me roof money. But you're also... a friend, I think. If that's alright.",
 				choices = {
-					{ text = "It's more than alright, Saffron.", tag = "kind", effects = { stat = { "affinity", 2 } }, next = "f3" },
-					{ text = "Does this mean I get a better mug?", tag = "joke", effects = { stat = { "affinity", 2 } }, next = "f4" },
+					{
+						text = "It's more than alright, Saffron.",
+						tag = "kind",
+						effects = { stat = { "affinity", 2 } },
+						next = "f3",
+					},
+					{
+						text = "Does this mean I get a better mug?",
+						tag = "joke",
+						effects = { stat = { "affinity", 2 } },
+						next = "f4",
+					},
 				},
 			},
 			f3 = { emote = "happy", text = "Good. Excellent. Very good. ...Your line's tangled." },
@@ -569,7 +643,12 @@ return {
 				text = "{player}. You've got your 'Wren told me something' face on. It's like the Mayor face, but with more eyebrows.",
 				choices = {
 					{ text = "Wren mentioned the Old Bridge. The night it burned.", tag = "honest", next = "b1" },
-					{ text = "Nothing. I just wanted to see you.", tag = "kind", effects = { stat = { "affinity", 2 } }, next = "b2" },
+					{
+						text = "Nothing. I just wanted to see you.",
+						tag = "kind",
+						effects = { stat = { "affinity", 2 } },
+						next = "b2",
+					},
 				},
 			},
 			b1 = { emote = "sad", text = "Of course they did.", next = "b3" },
@@ -584,7 +663,12 @@ return {
 				text = "Would you — no. Never mind. It's silly.",
 				choices = {
 					{ text = "I'll come with you.", tag = "kind", effects = { stat = { "trust", 3 } }, next = "c1" },
-					{ text = "Only if you want me there.", tag = "respect", effects = { stat = { "trust", 4 } }, next = "c2" },
+					{
+						text = "Only if you want me there.",
+						tag = "respect",
+						effects = { stat = { "trust", 4 } },
+						next = "c2",
+					},
 				},
 			},
 			c1 = {
@@ -680,7 +764,10 @@ return {
 					{
 						text = "So the hoard is how you make sure you never lose anything again.",
 						tag = "insight",
-						effects = { stat = { { "trust", 4 }, { "affinity", 2 }, { "resolve", 1 } }, flag = "d1_insight" },
+						effects = {
+							stat = { { "trust", 4 }, { "affinity", 2 }, { "resolve", 1 } },
+							flag = "d1_insight",
+						},
 						next = "di",
 					},
 					{
@@ -708,7 +795,11 @@ return {
 				text = "...And probably correct. Two hundred and six spoons, {player}. Nobody needs two hundred and six spoons.",
 				next = "e1",
 			},
-			dd = { emote = "annoyed", text = "Right. Of course. 'Get over it.' I'll have it put on a mug.", next = "dd2" },
+			dd = {
+				emote = "annoyed",
+				text = "Right. Of course. 'Get over it.' I'll have it put on a mug.",
+				next = "dd2",
+			},
 			dd2 = { emote = "sad", text = "I think I'd like to be alone for a bit. You can head back." },
 			e1 = {
 				emote = "determined",
@@ -802,7 +893,11 @@ return {
 				text = "The moon! She'd follow me, obviously, but she'd have to admit she was impressed by the commute.",
 				next = "c1",
 			},
-			c1 = { emote = "thoughtful", text = "There's something else. Something I should've given back years ago.", next = "c2" },
+			c1 = {
+				emote = "thoughtful",
+				text = "There's something else. Something I should've given back years ago.",
+				next = "c2",
+			},
 			c2 = {
 				emote = "sad",
 				text = "Her lantern. The Warden's lantern. She dropped it on the bridge that night. I picked it up, and I... never returned it. It's somewhere in the hoard. I buried it. On purpose, I think.",
@@ -933,7 +1028,11 @@ return {
 				emote = "happy",
 				text = "There you are! The fireflies are out. Help me catch some for the festival lanterns — gently. We let them go afterwards. They're employees, not prisoners.",
 				choices = {
-					{ text = "Let's catch some fireflies.", tag = "kind", effects = { startActivity = "act_fireflies" } },
+					{
+						text = "Let's catch some fireflies.",
+						tag = "kind",
+						effects = { startActivity = "act_fireflies" },
+					},
 					{ text = "Give me a moment." },
 				},
 			},
@@ -1030,7 +1129,10 @@ return {
 				text = "Me especially! Bold. Correct, but bold. I'm glad you're here, {player}. Whatever happens. Best fireflies in years.",
 			},
 			h1 = { emote = "thoughtful", text = "That's fair. Honest. I'll take honest over pretty any day." },
-			l1 = { emote = "sad", text = "Oh. Right. Of course. ...The fireflies are nice, though. Stay for those, at least." },
+			l1 = {
+				emote = "sad",
+				text = "Oh. Right. Of course. ...The fireflies are nice, though. Stay for those, at least.",
+			},
 		},
 		onEnd = { event = "talk:saffron_stars" },
 	},
@@ -1102,7 +1204,12 @@ return {
 						effects = { stat = { { "trust", 2 }, { "resolve", 1 } } },
 						next = "z1",
 					},
-					{ text = "You don't have to decide tonight.", tag = "respect", effects = { stat = { "trust", 2 } }, next = "z1" },
+					{
+						text = "You don't have to decide tonight.",
+						tag = "respect",
+						effects = { stat = { "trust", 2 } },
+						next = "z1",
+					},
 				},
 			},
 			k1 = {
@@ -1191,8 +1298,19 @@ return {
 				emote = "tender",
 				text = "I've wanted to say that since the pond. Maybe since the roof. Is it strange, falling for someone who arrived as lost property?",
 				choices = {
-					{ text = "Only a little strange.", tag = "joke", effects = { stat = { "affinity", 2 } }, next = "yes3" },
-					{ text = "Not strange at all.", tag = "romance", romance = true, effects = { stat = { "romance", 2 } }, next = "yes3" },
+					{
+						text = "Only a little strange.",
+						tag = "joke",
+						effects = { stat = { "affinity", 2 } },
+						next = "yes3",
+					},
+					{
+						text = "Not strange at all.",
+						tag = "romance",
+						romance = true,
+						effects = { stat = { "romance", 2 } },
+						next = "yes3",
+					},
 				},
 			},
 			yes3 = {
@@ -1333,7 +1451,11 @@ return {
 				emote = "sad",
 				text = "Cinderra breathes, and the Hearthflame roars back to life, gold and enormous. It is beautiful. It is not Saffron's.",
 			},
-			c1 = { emote = "sad", text = "I want to. I want to so much. But my fire hasn't answered me in eight years.", next = "c2" },
+			c1 = {
+				emote = "sad",
+				text = "I want to. I want to so much. But my fire hasn't answered me in eight years.",
+				next = "c2",
+			},
 			c2 = {
 				emote = "thoughtful",
 				text = "{player}... what should I do?",
@@ -1374,14 +1496,24 @@ return {
 				next = "go",
 			},
 			b1 = { emote = "determined", text = "Believe in me. Right. Okay. Okay okay okay.", next = "go" },
-			fam1 = { speaker = "cinderra", emote = "tender", text = "Together, then. As it should have been.", next = "go" },
+			fam1 = {
+				speaker = "cinderra",
+				emote = "tender",
+				text = "Together, then. As it should have been.",
+				next = "go",
+			},
 			m1 = { emote = "sad", text = "...Go home.", next = "m2" },
 			m2 = {
 				emote = "thoughtful",
 				text = "Maybe you're right. Maybe I need to learn the fire properly, where it started, before I can carry it here.",
 				next = "m3",
 			},
-			m3 = { speaker = "cinderra", emote = "tender", text = "Then we will learn it together. Come, little flame.", next = "m4" },
+			m3 = {
+				speaker = "cinderra",
+				emote = "tender",
+				text = "Then we will learn it together. Come, little flame.",
+				next = "m4",
+			},
 			m4 = {
 				speaker = "narrator",
 				emote = "tender",

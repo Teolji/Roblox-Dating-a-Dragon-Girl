@@ -2,8 +2,9 @@
 	World
 	Explorer: ReplicatedStorage > Hearthscale > Content > World (ModuleScript)
 
-	Anchors: named world positions { x, y, z, face = yawDegrees } (face 0 =
-	looking toward -Z). NPC anchors are feet positions. WorldBuilder creates
+	Anchors: named world positions { x, y, z [, yawDegrees] }. Yaw is
+	atan2(-dx, -dz) of the direction faced (0 = looking toward -Z).
+	NPC anchors are feet positions. WorldBuilder creates
 	an invisible Part for every anchor under Workspace.HearthscaleWorld.Anchors;
 	if you build your own map, keep that folder and move the parts — the
 	part positions then override these numbers.
@@ -13,29 +14,29 @@
 ]]
 
 local Anchors = {
-	Spawn = { -40, 0, 14, face = -90 },
+	Spawn = { -40, 0, 14, -90 },
 
 	-- Keeping House (Saffron's Lost & Found), open front facing the square (+X)
-	Saffron_Shop = { -64, 0, 0, face = -90 },
-	Sort_Table = { -62, 0, 10, face = -90 },
+	Saffron_Shop = { -64, 0, 0, -90 },
+	Sort_Table = { -62, 0, 10, -90 },
 	Hoard_Clue_1 = { -83, 3, -10 },
 	Hoard_Clue_2 = { -76, 3, -13 },
 	Hoard_Clue_3 = { -83, 3, 4 },
 	Hoard_Lantern = { -83, 2, 11 },
 
 	-- Village square
-	Pim_Square = { 16, 0, -14, face = -135 },
-	Saffron_Square = { -16, 0, 14, face = -60 },
-	Lantern_Table = { -8, 0, 20, face = 0 },
-	Cinderra_Square = { 14, 0, 10, face = -120 },
+	Pim_Square = { 16, 0, -14, 131 },
+	Saffron_Square = { -16, 0, 14, -49 },
+	Lantern_Table = { -8, 0, 20, 0 },
+	Cinderra_Square = { 14, 0, 10, 54 },
 
 	-- Buildings around the square
-	Mabel_Bakery = { -40, 0, -46, face = 0 },
-	Pim_Hall = { 58, 0, 0, face = 90 },
-	Wren_Workshop = { 48, 0, 48, face = 135 },
+	Mabel_Bakery = { -40, 0, -46, -139 },
+	Pim_Hall = { 58, 0, 0, 90 },
+	Wren_Workshop = { 48, 0, 48, 45 },
 
 	-- Mirror Pond (south)
-	Saffron_Pond = { -18, 0, 92, face = 180 },
+	Saffron_Pond = { -18, 0, 92, 180 },
 	Pond_Dock = { -10, 0, 98 },
 	Flowers_Pond = { 20, 1.5, 100 },
 
@@ -49,12 +50,12 @@ local Anchors = {
 	Mitten_Spot = { 185, 1.5, 55 },
 
 	-- Old Bridge ruins (north-east, on the west cliff above the gorge)
-	Saffron_Bridge = { 134, 12, -156, face = -90 },
+	Saffron_Bridge = { 134, 12, -156, -90 },
 	Bridge_Site = { 128, 12, -160 },
 
 	-- Stargazer Hill (west). The hill is a sphere of radius 60 centred at
 	-- (-160, -40, 60), so heights follow its surface.
-	Saffron_Hill = { -160, 20, 60, face = -90 },
+	Saffron_Hill = { -160, 20, 60, -90 },
 	Hill_Meadow = { -150, 18.9, 66 },
 	Flowers_Hill = { -120, 6.2, 60 },
 	Firefly_1 = { -142.8, 20.2, 65.3 },
@@ -73,8 +74,8 @@ local Anchors = {
 	-- Hearthpeak (north). Trail starts at (30, 0, -110) and climbs to y = 64.
 	Frostbloom_Trail = { 34, 33.5, -225 },
 	Summit_Center = { 30, 64, -362 },
-	Saffron_Summit = { 22, 64, -372, face = 0 },
-	Cinderra_Summit = { 40, 64, -374, face = 0 },
+	Saffron_Summit = { 22, 64, -372, 0 },
+	Cinderra_Summit = { 40, 64, -374, 0 },
 	Hearthflame = { 30, 64, -388 },
 }
 

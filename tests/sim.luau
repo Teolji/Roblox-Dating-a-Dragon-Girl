@@ -211,7 +211,8 @@ function Sim:playActivity(actId)
 		end
 	end
 	local events = {}
-	local finished, result = self.Activities.finish(self.state, session, submission, (def.minDuration or 0) + 1, self.ctx, events)
+	local finished, result =
+		self.Activities.finish(self.state, session, submission, (def.minDuration or 0) + 1, self.ctx, events)
 	assert(finished, `activity {actId} refused: {tostring(result)}`)
 	self:record(events)
 	self:handleActions(events)
@@ -226,7 +227,7 @@ function Sim:handleActions(events)
 	end
 end
 
-function Sim:talk(npcId, convId)
+function Sim:talk(_npcId, convId)
 	local events = {}
 	local session = self.Dialogue.begin(self.state, convId, self.ctx, events)
 	for _ = 1, 400 do

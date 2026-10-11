@@ -90,8 +90,7 @@ local function build(path, name, parent)
 		elseif entry ~= "init.luau" and string.sub(entry, -5) == ".luau" then
 			local base = string.sub(entry, 1, -6)
 			if not string.find(base, "%.server$") and not string.find(base, "%.client$") then
-				rawget(node, "_children")[base] =
-					newInstance(base, "ModuleScript", node, fs.readFile(full), full)
+				rawget(node, "_children")[base] = newInstance(base, "ModuleScript", node, fs.readFile(full), full)
 			end
 		end
 	end

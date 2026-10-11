@@ -1,0 +1,5 @@
+std = "roblox"
+
+[lints]
+# Data tables intentionally mix optional fields; shadowing is used for small helpers.
+shadowing = "allow"

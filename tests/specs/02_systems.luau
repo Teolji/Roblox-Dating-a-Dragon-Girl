@@ -173,7 +173,11 @@ return function(T, root, gameRequire)
 
 	T.test("dialogue: text tokens fill in name, title and hint", function()
 		local state = fresh()
-		T.eq(Dialogue.format("Hi {player}, {saffron}.", state, ctx, "Ash"), "Hi Ash, Miss Ignavarre.", "stranger tokens")
+		T.eq(
+			Dialogue.format("Hi {player}, {saffron}.", state, ctx, "Ash"),
+			"Hi Ash, Miss Ignavarre.",
+			"stranger tokens"
+		)
 		T.ok(#Dialogue.format("{hint}", state, ctx, "Ash") > 10, "hint text")
 	end)
 

@@ -72,12 +72,21 @@ return {
 						when = { milestone = "acquaintance" },
 						next = "likes",
 					},
-					{ text = "How long have you known Saffron?", once = "mabel_known", tag = "curious", next = "known" },
+					{
+						text = "How long have you known Saffron?",
+						once = "mabel_known",
+						tag = "curious",
+						next = "known",
+					},
 					{ text = "Any gossip?", next = "gossip" },
 					{ text = "Goodbye." },
 				},
 			},
-			bun = { emote = "happy", text = "Fresh from the oven! Mind the honey, it's ambitious today.", next = "menu" },
+			bun = {
+				emote = "happy",
+				text = "Fresh from the oven! Mind the honey, it's ambitious today.",
+				next = "menu",
+			},
 			likes = {
 				emote = "smug",
 				text = "Smoked ember tea, my special blend. She'd sell her own horns for it. Here — take a tin. Tell her it's from you. I won't tell her it's from me.",
@@ -253,7 +262,11 @@ return {
 					{ text = "Pim! Don't read her post.", tag = "respect", next = "b2" },
 				},
 			},
-			b1 = { emote = "happy", text = "Splendid. Do mind the seal. It's warm. Why is it warm?", effects = { give = "sealed_letter" } },
+			b1 = {
+				emote = "happy",
+				text = "Splendid. Do mind the seal. It's warm. Why is it warm?",
+				effects = { give = "sealed_letter" },
+			},
 			b2 = {
 				emote = "flustered",
 				text = "I didn't READ it! I squinted at it supportively. Here — take it before I squint again.",
@@ -288,7 +301,12 @@ return {
 				emote = "thoughtful",
 				text = "Glowcaps, lanterns, bunting, Hearthflame. My list has a list. How are the preparations?",
 				choices = {
-					{ text = "Anything I can carry for Saffron?", once = "pim_firestarter", tag = "kind", next = "fs1" },
+					{
+						text = "Anything I can carry for Saffron?",
+						once = "pim_firestarter",
+						tag = "kind",
+						next = "fs1",
+					},
 					{ text = "Goodbye." },
 				},
 			},
@@ -359,15 +377,30 @@ return {
 				emote = "surprised",
 				text = "Wait — you're the balloon person! I saw you come down. WHOOSH, crunch. Ten out of ten. Do you want it fixed? I've never fixed a balloon. I've fixed a LOT of things that weren't balloons.",
 				choices = {
-					{ text = "Yes, please! That'd be amazing.", tag = "kind", effects = { flag = "balloon_repair" }, next = "a3" },
-					{ text = "No rush. I'm not going anywhere just yet.", tag = "friend", effects = { flag = "balloon_repair" }, next = "a3" },
+					{
+						text = "Yes, please! That'd be amazing.",
+						tag = "kind",
+						effects = { flag = "balloon_repair" },
+						next = "a3",
+					},
+					{
+						text = "No rush. I'm not going anywhere just yet.",
+						tag = "friend",
+						effects = { flag = "balloon_repair" },
+						next = "a3",
+					},
 				},
 			},
 			a3 = {
 				emote = "thoughtful",
 				text = "Also — is it true Miss Ignavarre's a dragon? Can she breathe fire? Does her tail get cold?",
 				choices = {
-					{ text = "That's her business to share.", tag = "respect", effects = { flag = "wren_respect" }, next = "b1" },
+					{
+						text = "That's her business to share.",
+						tag = "respect",
+						effects = { flag = "wren_respect" },
+						next = "b1",
+					},
 					{ text = "Ask her yourself!", tag = "joke", next = "b2" },
 				},
 			},
@@ -537,7 +570,11 @@ return {
 					},
 				},
 			},
-			b1 = { emote = "thoughtful", text = "Not ready. She was not ready eight years ago either. It seems some things keep.", next = "c1" },
+			b1 = {
+				emote = "thoughtful",
+				text = "Not ready. She was not ready eight years ago either. It seems some things keep.",
+				next = "c1",
+			},
 			b2 = {
 				emote = "smug",
 				text = "Protective. Good. She needs someone who will stand in a doorway for her. It was never going to be me.",

@@ -106,16 +106,37 @@ return {
 
 	-- Journal "What you know about Saffron" entries, unlocked by flags.
 	Notes = {
-		{ flag = "met_saffron", text = "Runs the Keeping House, Kettlewick's Lost & Found. Very particular about the ledger." },
-		{ flag = "learned_age", text = "She's two hundred and nine — twenty-six in dragon years. Doing the maths out loud is rude." },
+		{
+			flag = "met_saffron",
+			text = "Runs the Keeping House, Kettlewick's Lost & Found. Very particular about the ledger.",
+		},
+		{
+			flag = "learned_age",
+			text = "She's two hundred and nine — twenty-six in dragon years. Doing the maths out loud is rude.",
+		},
 		{ flag = "learned_shy", text = "Avoids going out. People ask about her horns, and about the Hearthflame." },
 		{ flag = "learned_tea", text = "Loves smoked ember tea. Mabel blends it." },
-		{ flag = "learned_lost_things", text = "Lights up at lost things. Anything unclaimed is, in her words, 'just waiting'." },
+		{
+			flag = "learned_lost_things",
+			text = "Lights up at lost things. Anything unclaimed is, in her words, 'just waiting'.",
+		},
 		{ flag = "learned_tail", text = "Her tail and horns are hers. Don't touch without being invited." },
 		{ flag = "learned_stars", text = "Loves stargazing — especially the Dragon's Tail constellation." },
-		{ flag = "pond_heart_to_heart", text = "Hasn't breathed real fire in eight years. Every time she reaches for it, there's 'a wall'." },
-		{ flag = "heard_full_story", text = "Eight years ago her fire burned the Old Bridge during her Warden trial. Nobody was hurt. She never forgave herself." },
-		{ flag = "read_letter", text = "Her mother, Cinderra — the Eighth Flame — is coming on Lanternfall Eve to take her home." },
-		{ flag = "found_lantern", text = "She kept her mother's Warden lantern for eight years, and polished it every anniversary." },
+		{
+			flag = "pond_heart_to_heart",
+			text = "Hasn't breathed real fire in eight years. Every time she reaches for it, there's 'a wall'.",
+		},
+		{
+			flag = "heard_full_story",
+			text = "Eight years ago her fire burned the Old Bridge during her Warden trial. Nobody was hurt. She never forgave herself.",
+		},
+		{
+			flag = "read_letter",
+			text = "Her mother, Cinderra — the Eighth Flame — is coming on Lanternfall Eve to take her home.",
+		},
+		{
+			flag = "found_lantern",
+			text = "She kept her mother's Warden lantern for eight years, and polished it every anniversary.",
+		},
 	},
 }

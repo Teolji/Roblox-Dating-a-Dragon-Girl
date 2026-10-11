@@ -91,12 +91,14 @@ function Dialogue.format(text: string?, state, ctx, playerName: string?): string
 		saffron = milestone and milestone.callHer or "Saffron",
 		festival = (ctx.content.FestivalCountdown or {})[state.chapter] or "soon",
 	}
-	return (string.gsub(text, "{(%w+)}", function(key)
-		if key == "hint" then
-			return Dialogue.hint(state, ctx)
-		end
-		return tokens[key]
-	end))
+	return (
+		string.gsub(text, "{(%w+)}", function(key)
+			if key == "hint" then
+				return Dialogue.hint(state, ctx)
+			end
+			return tokens[key]
+		end)
+	)
 end
 
 local function visibleChoices(state, node, ctx)

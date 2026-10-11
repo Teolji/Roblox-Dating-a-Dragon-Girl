@@ -17,7 +17,7 @@ return {
 		kind = "sort",
 		partner = "saffron",
 		anchor = "Sort_Table",
-		minDuration = 6,
+		minDuration = 3,
 		when = { any = { { questStep = { "q_item_4112", "catalogue" } }, { activity = "act_catalogue" } } },
 		params = {
 			count = 8,
@@ -51,7 +51,10 @@ return {
 			{
 				min = 5,
 				label = "Respectably Tidy",
-				line = { emote = "happy", text = "Respectable! Nothing on fire, nothing in the wrong century. Well done." },
+				line = {
+					emote = "happy",
+					text = "Respectable! Nothing on fire, nothing in the wrong century. Well done.",
+				},
 			},
 			{
 				min = 8,
@@ -75,7 +78,7 @@ return {
 		kind = "timing",
 		partner = "saffron",
 		anchor = "Pond_Dock",
-		minDuration = 5,
+		minDuration = 2.5,
 		when = { any = { { questStep = { "q_pond", "fish" } }, { activity = "act_fishing" } } },
 		params = {
 			rounds = 5,
@@ -144,8 +147,16 @@ return {
 			},
 		},
 		tiers = {
-			{ min = 0, label = "A Few Sparks", line = { emote = "happy", text = "A few! That's plenty. They're employees, not prisoners." } },
-			{ min = 5, label = "A Jar of Stars", line = { emote = "happy", text = "Look at them all. It's like holding a little sky." } },
+			{
+				min = 0,
+				label = "A Few Sparks",
+				line = { emote = "happy", text = "A few! That's plenty. They're employees, not prisoners." },
+			},
+			{
+				min = 5,
+				label = "A Jar of Stars",
+				line = { emote = "happy", text = "Look at them all. It's like holding a little sky." },
+			},
 			{
 				min = 8,
 				label = "Firefly Whisperer",
@@ -175,12 +186,23 @@ return {
 			timeLimit = 150,
 		},
 		tiers = {
-			{ min = 0, label = "Abstract Art", line = { emote = "laugh", text = "That lantern now says 'soup' in Old Draconic. I love it. It stays." } },
-			{ min = 2, label = "Festival Ready", line = { emote = "happy", text = "Lovely work. Those will glow beautifully tomorrow." } },
+			{
+				min = 0,
+				label = "Abstract Art",
+				line = { emote = "laugh", text = "That lantern now says 'soup' in Old Draconic. I love it. It stays." },
+			},
+			{
+				min = 2,
+				label = "Festival Ready",
+				line = { emote = "happy", text = "Lovely work. Those will glow beautifully tomorrow." },
+			},
 			{
 				min = 4,
 				label = "Master Lanternwright",
-				line = { emote = "happy", text = "Perfect runes! My mother would — well. She'd say 'adequate', which is dragon for 'perfect'." },
+				line = {
+					emote = "happy",
+					text = "Perfect runes! My mother would — well. She'd say 'adequate', which is dragon for 'perfect'.",
+				},
 				effects = { flag = "lanterns_perfect", stat = { "affinity", 2 } },
 			},
 		},
@@ -195,7 +217,7 @@ return {
 		description = "Breathe with Saffron. Push when the ember glows.",
 		kind = "timing",
 		partner = "saffron",
-		minDuration = 4,
+		minDuration = 2.5,
 		-- Each point of Saffron's resolve (earned through earlier choices) widens the zone.
 		resolveWidthBonus = 0.02,
 		when = { questStep = { "q_summit", "rekindle" } },

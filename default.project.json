@@ -1,0 +1,23 @@
+{
+  "name": "Hearthscale",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Hearthscale": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "HearthscaleServer": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "HearthscaleClient": {
+          "$path": "src/client"
+        }
+      }
+    }
+  }
+}

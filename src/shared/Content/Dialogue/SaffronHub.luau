@@ -88,7 +88,12 @@ return {
 				choices = {
 					{ text = "How old are you, exactly?", once = "t_age", tag = "curious", next = "age1" },
 					{ text = "Why run a Lost & Found?", once = "t_lostfound", tag = "curious", next = "lf1" },
-					{ text = "What's the strangest thing in the hoard?", once = "t_strange", tag = "joke", next = "st1" },
+					{
+						text = "What's the strangest thing in the hoard?",
+						once = "t_strange",
+						tag = "joke",
+						next = "st1",
+					},
 					{ text = "What do you like to drink?", once = "t_tea", tag = "curious", next = "tea1" },
 					{ text = "Can I touch your tail?", once = "t_tail", tag = "curious", next = "tail1" },
 					{
@@ -278,7 +283,12 @@ return {
 						effects = { stat = { { "resolve", 1 }, { "trust", 1 } } },
 						next = "af2",
 					},
-					{ text = "Whatever you choose, I'm on your side.", tag = "respect", effects = { stat = { "trust", 2 } }, next = "topics" },
+					{
+						text = "Whatever you choose, I'm on your side.",
+						tag = "respect",
+						effects = { stat = { "trust", 2 } },
+						next = "topics",
+					},
 				},
 			},
 			af2 = {
