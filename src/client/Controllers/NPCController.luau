@@ -138,6 +138,11 @@ function NPCController.refresh()
 	if state == nil then
 		return
 	end
+	-- Don't move anyone mid-scene; ModeChanged triggers a refresh afterwards.
+	if Session.mode("dialogue") or Session.mode("minigame") then
+		NPCController.updatePrompts()
+		return
+	end
 	for npcId in pairs(Session.Content.Characters) do
 		local anchor = World.station(state, npcId, Session.ctx)
 		local entry = npcs[npcId]
@@ -189,7 +194,7 @@ function NPCController.init(talkCallback: (string) -> ())
 	folder.Name = "HearthscaleLocalNPCs"
 	folder.Parent = workspace
 	Session.StateChanged:Connect(NPCController.refresh)
-	Session.ModeChanged:Connect(NPCController.updatePrompts)
+	Session.ModeChanged:Connect(NPCController.refresh)
 	NPCController.refresh()
 
 	-- Smoothly face the player during conversations.

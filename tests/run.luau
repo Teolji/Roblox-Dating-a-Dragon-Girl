@@ -11,10 +11,11 @@ local luau = require("@lune/luau")
 
 local Loader = require("./loader")
 local Sim = require("./sim")
+local Harness = require("./server_harness")
 
 local root, gameRequire = Loader.mount("src/shared", "Hearthscale")
 
-local T = { results = {}, Sim = Sim }
+local T = { results = {}, Sim = Sim, Harness = Harness }
 
 function T.test(name: string, fn: () -> ())
 	table.insert(T.results, { name = name, fn = fn })

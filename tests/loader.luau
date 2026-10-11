@@ -97,8 +97,14 @@ local function build(path, name, parent)
 	return node
 end
 
-function Loader.mount(path: string, name: string)
-	local root = build(path, name, nil)
+-- Mounts one or more directories that share a single module cache.
+-- `globals` (optional) are injected into every module's environment, e.g.
+-- mocked `game`, `workspace`, `task` or Roblox datatypes for server tests.
+function Loader.mountMany(dirs: { { path: string, name: string } }, globals: { [string]: any }?)
+	local roots = {}
+	for _, dir in ipairs(dirs) do
+		roots[dir.name] = build(dir.path, dir.name, nil)
+	end
 	local cache = {}
 
 	local function requireModule(module)
@@ -109,16 +115,25 @@ function Loader.mount(path: string, name: string)
 			return cache[module]
 		end
 		assert(rawget(module, "_className") == "ModuleScript", `{module.Name} is not a ModuleScript`)
+		local env = { script = module, require = requireModule }
+		for key, value in pairs(globals or {}) do
+			env[key] = value
+		end
 		local chunk = luau.load(rawget(module, "_source"), {
 			debugName = rawget(module, "_path"),
-			environment = { script = module, require = requireModule },
+			environment = env,
 		})
 		local result = chunk()
 		cache[module] = result
 		return result
 	end
 
-	return root, requireModule
+	return roots, requireModule
+end
+
+function Loader.mount(path: string, name: string, globals: { [string]: any }?)
+	local roots, requireModule = Loader.mountMany({ { path = path, name = name } }, globals)
+	return roots[name], requireModule
 end
 
 return Loader
