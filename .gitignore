@@ -1,0 +1,9 @@
+# Build outputs
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+!assets/**/*.rbxm
+build/
+sourcemap.json
+.DS_Store
