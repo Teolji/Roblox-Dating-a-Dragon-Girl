@@ -118,14 +118,12 @@ function MinigameHost.start(payload)
 	local cancelButton =
 		Theme.button({ Text = "Not now", BackgroundColor3 = Theme.Colors.panelSoft, LayoutOrder = 4, Parent = frame })
 	local cancelled = false
-	cancelButton.Activated:Connect(function()
-		cancelled = true
-	end)
 	local event = Instance.new("BindableEvent")
 	startButton.Activated:Connect(function()
 		event:Fire()
 	end)
 	cancelButton.Activated:Connect(function()
+		cancelled = true
 		event:Fire()
 	end)
 	event.Event:Wait()
@@ -163,8 +161,10 @@ function MinigameHost.start(payload)
 	ContextActionService:BindActionAtPriority(
 		"HearthscaleMinigame",
 		function(_name, inputState, input)
+			-- Only consume presses; releases pass through so Roblox's own
+			-- jump/movement state never gets stuck.
 			if inputState ~= Enum.UserInputState.Begin then
-				return Enum.ContextActionResult.Sink
+				return Enum.ContextActionResult.Pass
 			end
 			local digit = ({
 				[Enum.KeyCode.One] = 1,

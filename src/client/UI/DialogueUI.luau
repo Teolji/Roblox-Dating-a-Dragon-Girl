@@ -458,7 +458,7 @@ function DialogueUI.init()
 				return Enum.ContextActionResult.Pass
 			end
 			if inputState ~= Enum.UserInputState.Begin then
-				return Enum.ContextActionResult.Sink
+				return Enum.ContextActionResult.Pass -- never swallow key releases (keeps jump state sane)
 			end
 			local key = input.KeyCode
 			local digit = ({

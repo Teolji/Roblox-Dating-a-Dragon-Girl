@@ -213,6 +213,18 @@ return function(T)
 		T.eq(store.data.player_111.state.chapter, 5, "real save untouched")
 	end)
 
+	T.test("server: unpublished place in Studio falls back to memory saving without stalling", function()
+		local store = Harness.newStore()
+		store.failAll = true
+		local h = Harness.new({ store = store, studio = true })
+		local started = h.now
+		local player = h:join(117)
+		T.eq(h.DataService.mode, "memory", "memory mode")
+		T.ok(h.now - started < 1, "no retry delay before playing")
+		T.ok(h.DataService.get(player).saveEnabled, "saving works within the session")
+		T.eq(lastStatus(h, player), "memory", "HUD told it's a test session")
+	end)
+
 	T.test("server: transient save errors are retried", function()
 		local store = Harness.newStore()
 		local h = Harness.new({ store = store })

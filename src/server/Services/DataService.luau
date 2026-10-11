@@ -57,13 +57,6 @@ local function keyFor(player: Player): string
 	return ctx.config.DataStoreKeyPrefix .. tostring(player.UserId)
 end
 
-local function isApiAccessError(message: string): boolean
-	message = string.lower(message)
-	return string.find(message, "studio", 1, true) ~= nil
-		or string.find(message, "api services", 1, true) ~= nil
-		or string.find(message, "403", 1, true) ~= nil
-end
-
 function DataService.init(context, statusCallback)
 	ctx = context
 	SaveSchema = require(ctx.shared.Systems.SaveSchema)
@@ -78,15 +71,18 @@ function DataService.init(context, statusCallback)
 		store = result
 	end
 
+	-- In Studio, DataStores fail when the place is unpublished or API access
+	-- is off. Fall back to memory so testing never stalls on retries.
 	if RunService:IsStudio() and ctx.config.UseMemoryStoreWhenApiUnavailable then
 		local probeOk, probeErr = pcall(function()
 			assert(store, "no datastore")
 			store:GetAsync("__probe")
 		end)
-		if not probeOk and (store == nil or isApiAccessError(tostring(probeErr))) then
+		if not probeOk then
 			warn(
-				"[Hearthscale] DataStores unavailable in Studio (enable Game Settings > Security > "
-					.. "'Enable Studio Access to API Services' to test real saving). Using an in-memory store."
+				`[Hearthscale] DataStores unavailable in Studio ({probeErr}). Publish the place and enable `
+					.. "Game Settings > Security > 'Enable Studio Access to API Services' to test real saving. "
+					.. "Using an in-memory store for this session."
 			)
 			store = memoryStore()
 			DataService.mode = "memory"

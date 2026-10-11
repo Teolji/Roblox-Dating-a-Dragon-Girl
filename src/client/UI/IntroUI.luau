@@ -64,8 +64,9 @@ function IntroUI.play()
 		function(_name, inputState)
 			if inputState == Enum.UserInputState.Begin then
 				advanceSignal:Fire()
+				return Enum.ContextActionResult.Sink
 			end
-			return Enum.ContextActionResult.Sink
+			return Enum.ContextActionResult.Pass
 		end,
 		false,
 		Enum.ContextActionPriority.High.Value + 10,
